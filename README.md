@@ -1,3 +1,21 @@
+### 4.3+ support
+
+The _select_file() call is not able to be accessed anymore it seems in 4.3.
+
+So switched with some code from this plugin:
+
+* https://github.com/OrigamiDev-Pete/TODO_Manager.
+
+Only support internal editor seems it is running ok.
+
+If anyone wants to improve please go ahead.
+
+Thanks.
+
+------
+
+### Original README
+
 # FileSystemView
 
 ![](https://img.shields.io/badge/version-2.0-blue?style=flat-square)

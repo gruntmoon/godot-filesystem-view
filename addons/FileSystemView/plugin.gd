@@ -73,8 +73,12 @@ func _on_ViewEditor_closed():
 
 
 func fsd_open_file(file_path: String):
-	filesystem_dock.call("_select_file", file_path, false)
+	call_deferred("go_to_script", file_path)
 
+func go_to_script(script_path: String, line_number : int = 0) -> void:
+	var script := load(script_path)
+	get_editor_interface().edit_resource(script)
+	get_editor_interface().get_script_editor().goto_line(line_number - 1)
 
 func fsd_select_paths(paths: PackedStringArray):
 	if paths.size() == 0:
