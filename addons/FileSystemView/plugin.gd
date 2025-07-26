@@ -73,12 +73,15 @@ func _on_ViewEditor_closed():
 
 
 func fsd_open_file(file_path: String):
-	call_deferred("go_to_script", file_path)
+	call_deferred("go_to_resource", file_path)
 
-func go_to_script(script_path: String, line_number : int = 0) -> void:
-	var script := load(script_path)
-	get_editor_interface().edit_resource(script)
-	get_editor_interface().get_script_editor().goto_line(line_number - 1)
+func go_to_resource(res_path: String, line_number : int = 0) -> void:
+	var res := ResourceLoader.load(res_path)
+	if res is PackedScene:
+		get_editor_interface().open_scene_from_path(res_path)
+	else:
+		get_editor_interface().edit_resource(res)
+		# get_editor_interface().get_script_editor().goto_line(line_number - 1)
 
 func fsd_select_paths(paths: PackedStringArray):
 	if paths.size() == 0:
