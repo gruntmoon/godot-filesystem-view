@@ -8,6 +8,11 @@ So switched with some code from this plugin:
 
 Only support internal editor seems it is running ok.
 
+Double click on a Textfile (txt cfg ini) still sometimes fail but there are workarounds:
+
+* Either open the same file in default file manager
+* Or right click and open it.
+
 If anyone wants to improve please go ahead.
 
 Thanks.
